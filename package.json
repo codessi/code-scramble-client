@@ -1,6 +1,6 @@
 {
   "name": "code-scramble-client",
-  "homepage": "https://codessi.github.io/<code-scramble-client>",
+  "homepage": "https://codessi.github.io/code-scramble-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
