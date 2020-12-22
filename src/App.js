@@ -10,6 +10,10 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
+import CreateCodeQuiz from './components/CodeQuizForms/CreateCodeQuiz'
+import IndexCodeQuizs from './components/CodeQuizForms/IndexCodeQuizs'
+import ShowCodeQuiz from './components/CodeQuizForms/ShowCodeQuiz'
+
 class App extends Component {
   constructor () {
     super()
@@ -53,6 +57,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          {/* <Route exact path='/' render={() => (
+            <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
+          )} /> */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -64,6 +71,15 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-codeQuiz' render={() => (
+            <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/index-codeQuizs' render={() => (
+            <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/show-codeQuiz/:codeQuizId' render={() => (
+            <ShowCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
