@@ -51,12 +51,13 @@ const ShowCodeQuiz = (props) => {
     <div>
       {codeQuiz ? (
         <Container>
+          <p className= "p_wrap" >{codeQuiz.text}</p>
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>{codeQuiz.title}</Card.Title>
-                  <Card.Text>
+                  <Card.Text className= "p_wrap">
                     {codeQuiz.text}
                   </Card.Text>
                   <p></p>

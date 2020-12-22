@@ -23,9 +23,9 @@ class CreateCodeQuiz extends Component {
 
   onCreateCodeQuiz = event => {
     event.preventDefault()
-
+    console.log(this.state.text)
     const { msgAlert, history, user } = this.props
-
+    console.log('hi')
     createCodeQuiz(this.state, user)
       .then(() => msgAlert({
         heading: 'Poduct Successfully Created!',
@@ -45,7 +45,6 @@ class CreateCodeQuiz extends Component {
 
   render () {
     const { title, text } = this.state
-
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
@@ -68,7 +67,8 @@ class CreateCodeQuiz extends Component {
                 required
                 name="text"
                 value={text}
-                type="text"
+                type="textarea"
+                as = "textarea"
                 placeholder="Enter code here"
                 onChange={this.handleChange}
               />

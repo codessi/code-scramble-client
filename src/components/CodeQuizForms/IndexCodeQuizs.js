@@ -24,7 +24,7 @@ class IndexCodeQuizs extends Component {
 
   componentDidMount () {
     const { msgAlert, user } = this.props
-
+    console.log(this.state)
     indexCodeQuizs(user)
 
       .then(res => {
@@ -54,7 +54,7 @@ class IndexCodeQuizs extends Component {
         <Card key={codeQuiz._id} className="Card">
           <Card.Body>
             <Card.Title>{codeQuiz.title}</Card.Title>
-            <Card.Text>
+            <Card.Text className= "p_wrap">
               {codeQuiz.text}
             </Card.Text>
             <Button className="Button" variant="outline-info" href={'#show-codeQuiz/' + codeQuiz._id}>Take Quiz</Button>
