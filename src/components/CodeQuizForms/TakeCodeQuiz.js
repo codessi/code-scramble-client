@@ -51,15 +51,15 @@ const TakeCodeQuiz = (props) => {
     <div>
       {codeQuiz ? (
         <Container>
-          <p>{codeQuiz.text}</p>
+          <p className= "p_wrap">{codeQuiz.text}</p>
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>{codeQuiz.title}</Card.Title>
                   <Card.Text className= "p_wrap" contentEditable="true">
-                    {codeQuiz.text}
-                    {codeQuiz.text.split('↵').reverse().join('↵')}
+                    {/* {codeQuiz.text} */}
+                    {codeQuiz.text.split(' ').reverse().join(' ')}
                     {console.log(codeQuiz.text.split('↵').reverse().join('↵'))}
                   </Card.Text>
                   <p></p>
