@@ -13,6 +13,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import CreateCodeQuiz from './components/CodeQuizForms/CreateCodeQuiz'
 import IndexCodeQuizs from './components/CodeQuizForms/IndexCodeQuizs'
 import ShowCodeQuiz from './components/CodeQuizForms/ShowCodeQuiz'
+import TakeCodeQuiz from './components/CodeQuizForms/TakeCodeQuiz'
 import UpdateCodeQuiz from './components/CodeQuizForms/UpdateCodeQuiz'
 
 class App extends Component {
@@ -78,6 +79,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/index-codeQuizs' render={() => (
             <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/take-codeQuiz/:codeQuizId' render={() => (
+            <TakeCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/show-codeQuiz/:codeQuizId' render={() => (
             <ShowCodeQuiz msgAlert={this.msgAlert} user={user} />
