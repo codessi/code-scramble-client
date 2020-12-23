@@ -46,7 +46,6 @@ const TakeCodeQuiz = (props) => {
   //       })
   //     })
   // }
-  const x = 0
 
   return (
     <div>
@@ -58,9 +57,8 @@ const TakeCodeQuiz = (props) => {
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>{codeQuiz.title}</Card.Title>
-                  <Card.Title>{x}</Card.Title>
                   <Card.Text className= "p_wrap" contentEditable="true">
-                    {console.log(codeQuiz.text)}
+                    {codeQuiz.text}
                     {codeQuiz.text.split('↵').reverse().join('↵')}
                     {console.log(codeQuiz.text.split('↵').reverse().join('↵'))}
                   </Card.Text>
