@@ -71,6 +71,7 @@ class CreateCodeQuiz extends Component {
                 as = "textarea"
                 placeholder="Enter code here"
                 onChange={this.handleChange}
+                rows={10}
               />
             </Form.Group>
             <Button

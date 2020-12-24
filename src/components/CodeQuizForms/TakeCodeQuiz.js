@@ -62,19 +62,15 @@ const TakeCodeQuiz = (props) => {
     <div>
       {codeQuiz ? (
         <Container>
-          <Answer />
           {/* <p className= "p_wrap">{codeQuiz.text}</p> */}
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>{codeQuiz.title}</Card.Title>
-                  <Card.Text className= "p_wrap" contentEditable="true">
+                  <Card.Text className= "p_wrap" rows={10}contentEditable="true">
                     {shuffle(codeQuiz.text)}
-                    {/* {codeQuiz.text.split(' ').reverse().join(' ')} */}
-                    {console.log(codeQuiz.text.split('↵').reverse().join('↵'))}
                   </Card.Text>
-                  <p></p>
                   {(user._id === codeQuiz.owner) ? (
                     <div>
                       {/* <Button variant="danger" onClick={handleDelete}>Delete</Button>{' '} */}
@@ -82,6 +78,7 @@ const TakeCodeQuiz = (props) => {
                     </div>
                   ) : ''}
                 </Card.Body>
+                <Answer />
               </Col>
             </Row>
           </Card>

@@ -77,7 +77,9 @@ const CodeQuizUpdate = (props) => {
             placeholder="Enter codeQuiz's description"
             value={codeQuiz.text}
             onChange={handleChange}
+            as="textarea"
             name="text"
+            rows={10}
           />
         </Form.Group>
 

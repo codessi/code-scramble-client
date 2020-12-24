@@ -57,7 +57,7 @@ class IndexCodeQuizs extends Component {
             <Card.Text className= "p_wrap">
               {codeQuiz.text}
             </Card.Text>
-            <Button className="Button" variant="outline-info" href={'#take-codeQuiz/' + codeQuiz._id}>Take Quiz</Button>
+            <Button className="Button" variant="outline-info" href={'#take-codeQuiz/' + codeQuiz._id}>Take Quiz</Button>{'  '}
             <Button className="Button" variant="outline-info" href={'#show-codeQuiz/' + codeQuiz._id}>More</Button>
           </Card.Body>
           <Card.Footer>Updated on {codeQuiz.createdAt.slice(0, -14)}</Card.Footer>
