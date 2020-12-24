@@ -28,38 +28,50 @@ const TakeCodeQuiz = (props) => {
       })
   }, [])
 
-  // const handleDelete = () => {
-  //   deleteCodeQuiz(user, match.params.codeQuizId)
-  //     .then(() => {
-  //       msgAlert({
-  //         heading: 'CodeQuiz Deleted',
-  //         message: 'Back to the list of prodcuts',
-  //         variant: 'success'
-  //       })
-  //     })
-  //     .then(() => history.push('/index-codeQuizs'))
-  //     .catch(err => {
-  //       msgAlert({
-  //         heading: 'Deletion Failed',
-  //         message: 'error:' + err.message,
-  //         variant: 'danger'
-  //       })
-  //     })
-  // }
+  const Answer = () => {
+    const [showResults, setShowResults] = React.useState(false)
+    const onClick = () => setShowResults(true)
+    return (
+      <div>
+        <input type="submit" value="Answer" onClick={onClick} />
+        { showResults ? <Results /> : null }
+      </div>
+    )
+  }
+
+  const Results = () => (
+    <div id="results" className=" p_wrap search-results">
+      {codeQuiz.text}
+    </div>
+  )
+
+  const shuffle = function (x) {
+    const a = x.split('\n')
+    const n = a.length
+
+    for (let i = n - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const tmp = a[i]
+      a[i] = a[j]
+      a[j] = tmp
+    }
+    return a.join('\n')
+  }
 
   return (
     <div>
       {codeQuiz ? (
         <Container>
-          <p className= "p_wrap">{codeQuiz.text}</p>
+          <Answer />
+          {/* <p className= "p_wrap">{codeQuiz.text}</p> */}
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>{codeQuiz.title}</Card.Title>
                   <Card.Text className= "p_wrap" contentEditable="true">
-                    {/* {codeQuiz.text} */}
-                    {codeQuiz.text.split(' ').reverse().join(' ')}
+                    {shuffle(codeQuiz.text)}
+                    {/* {codeQuiz.text.split(' ').reverse().join(' ')} */}
                     {console.log(codeQuiz.text.split('↵').reverse().join('↵'))}
                   </Card.Text>
                   <p></p>
