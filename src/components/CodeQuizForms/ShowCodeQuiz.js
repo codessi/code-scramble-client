@@ -51,7 +51,7 @@ const ShowCodeQuiz = (props) => {
     <div>
       {codeQuiz ? (
         <Container>
-          <p className= "p_wrap" >{codeQuiz.text}</p>
+          {/* <p className= "p_wrap" >{codeQuiz.text}</p> */}
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={6}>
