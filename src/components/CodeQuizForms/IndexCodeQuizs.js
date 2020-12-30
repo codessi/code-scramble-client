@@ -48,7 +48,7 @@ class IndexCodeQuizs extends Component {
       codeQuizJsx = 'Loading...'
     } else if (this.state.codeQuizs.length === 0) {
       codeQuizJsx = 'No quizs to display :('
-    } else if (user) {
+    } else if (!user) {
       codeQuizJsx = this.state.codeQuizs.map(codeQuiz => (
 
         <Card key={codeQuiz._id} className="Card">

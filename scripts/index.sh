@@ -1,11 +1,11 @@
-#!/bin/sh
+# #!/bin/sh
 
-API="http://localhost:4741"
-URL_PATH="/codeQuizs"
+# API="http://localhost:4741"
+# URL_PATH="/codeQuizs"
 
-curl "${API}${URL_PATH}" \
-  --include \
-  --request GET \
-  --header "Authorization: Bearer ${TOKEN}"
+# curl "${API}${URL_PATH}" \
+#   --include \
+#   --request GET \
+#   --header "Authorization: Bearer ${TOKEN}"
 
-echo
+# echo
