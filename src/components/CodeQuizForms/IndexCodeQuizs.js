@@ -50,7 +50,6 @@ class IndexCodeQuizs extends Component {
       codeQuizJsx = 'No quizs to display :('
     } else if (!user) {
       codeQuizJsx = this.state.codeQuizs.map(codeQuiz => (
-
         <Card key={codeQuiz._id} className="Card">
           <Card.Body>
             <Card.Title>{codeQuiz.title}</Card.Title>
