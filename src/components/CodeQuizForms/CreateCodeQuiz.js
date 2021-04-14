@@ -23,9 +23,9 @@ class CreateCodeQuiz extends Component {
 
   onCreateCodeQuiz = event => {
     event.preventDefault()
-    console.log(this.state.text)
+    console.log(this.state)
     const { msgAlert, history, user } = this.props
-    console.log('hi')
+    console.log(user)
     createCodeQuiz(this.state, user)
       .then(() => msgAlert({
         heading: 'Poduct Successfully Created!',
