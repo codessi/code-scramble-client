@@ -30,6 +30,7 @@ class IndexCodeQuizs extends Component {
       .then(res => {
         console.log(res)
         this.setState({ codeQuizs: res.data.codeQuizs })
+        console.log(this.state)
       })
 
       .catch(error => {
@@ -42,13 +43,13 @@ class IndexCodeQuizs extends Component {
   }
 
   render () {
-    const { user } = this.props
+    // const { user } = this.props
     let codeQuizJsx
     if (!this.state.codeQuizs) {
       codeQuizJsx = 'Loading...'
     } else if (this.state.codeQuizs.length === 0) {
       codeQuizJsx = 'No quizs to display :('
-    } else if (!user) {
+    } else {
       codeQuizJsx = this.state.codeQuizs.map(codeQuiz => (
         <Card key={codeQuiz._id} className="Card">
           <Card.Body>
