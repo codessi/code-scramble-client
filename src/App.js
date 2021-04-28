@@ -60,7 +60,10 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
+            <Fragment>
+              <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
+              <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
+            </Fragment>
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -74,16 +77,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route path='/' render={() => (
-            <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
-          )} />
+
           <AuthenticatedRoute user={user} path='/index-codeQuizs' render={() => (
             <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/take-codeQuiz/:codeQuizId' render={() => (
             <TakeCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/show-codeQuiz/:codeQuizId' render={() => (
+          <Route path='/show-codeQuiz/:codeQuizId' render={() => (
             <ShowCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/codeQuiz-update/:codeQuizId' render={({ match, history }) => (

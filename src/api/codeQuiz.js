@@ -5,9 +5,9 @@ export const createCodeQuiz = (form, user) => {
   return axios({
     method: 'POST',
     url: apiUrl + '/codeQuizs',
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    },
+    // headers: {
+    //   'Authorization': `Token token=${user.token}`
+    // },
     data: {
       codeQuiz: {
         title: form.title,
@@ -30,10 +30,11 @@ export const indexCodeQuizs = () => {
 export const showCodeQuiz = (user, codeQuizId) => {
   return axios({
     url: apiUrl + '/codeQuizs/' + codeQuizId,
-    method: 'GET',
-    headers: {
-      'Authorization': `Token token=${user.token}`
-    }
+    method: 'GET'
+    // ,
+    // headers: {
+    //   'Authorization': `Token token=${user.token}`
+    // }
   })
 }
 

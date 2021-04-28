@@ -61,12 +61,12 @@ const ShowCodeQuiz = (props) => {
                     {codeQuiz.text}
                   </Card.Text>
                   <p></p>
-                  {(user._id === codeQuiz.owner) ? (
+                  { (
                     <div>
                       <Button variant="danger" onClick={handleDelete}>Delete</Button>{' '}
                       <Button href={'#codeQuiz-update/' + codeQuiz._id}>Update CodeQuiz</Button>{' '}
                     </div>
-                  ) : ''}
+                  ) }
                 </Card.Body>
               </Col>
             </Row>

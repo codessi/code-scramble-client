@@ -13,7 +13,8 @@ class CreateCodeQuiz extends Component {
 
     this.state = {
       title: '',
-      text: ''
+      text: '',
+      id: null
     }
   }
 
@@ -27,12 +28,15 @@ class CreateCodeQuiz extends Component {
     const { msgAlert, history, user } = this.props
     // console.log(user)
     createCodeQuiz(this.state, user)
+      .then(res => {
+        this.setState({ id: res.data.codeQuiz._id })
+      })
       .then(() => msgAlert({
         heading: 'Product Successfully Created!',
         message: messages.createCodeQuizSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/index-products'))
+      .then(() => history.push('/show-codeQuiz/' + this.state.id))
       .catch(error => {
         this.setState({ title: '', text: '' })
         msgAlert({
