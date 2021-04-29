@@ -28,12 +28,12 @@ const TakeCodeQuiz = (props) => {
       })
   }, [])
 
-  const Answer = () => {
+  const Solution = () => {
     const [showResults, setShowResults] = React.useState(false)
     const onClick = () => setShowResults(true)
     return (
       <div>
-        <input type="submit" value="Answer" onClick={onClick} />
+        <input type="submit" value="Solution" onClick={onClick} />
         { showResults ? <Results /> : null }
       </div>
     )
@@ -67,18 +67,16 @@ const TakeCodeQuiz = (props) => {
             <Row>
               <Col sm={6}>
                 <Card.Body>
-                  <Card.Title>{codeQuiz.title}</Card.Title>
+                  <Card.Title>Title: {codeQuiz.title}</Card.Title>
                   <Card.Text className= "p_wrap" rows={10}contentEditable="true">
                     {shuffle(codeQuiz.text)}
                   </Card.Text>
-                  {(user._id === codeQuiz.owner) ? (
-                    <div>
-                      {/* <Button variant="danger" onClick={handleDelete}>Delete</Button>{' '} */}
-                      {/* <Button href={'#codeQuiz-update/' + codeQuiz._id}>Update CodeQuiz</Button>{' '} */}
-                    </div>
-                  ) : ''}
+                  <h5>Answer</h5>
+                  <Card.Text className= "p_wrap" rows={10}contentEditable="true">
+                  </Card.Text>
                 </Card.Body>
-                <Answer />
+                <br/>
+                <Solution />
               </Col>
             </Row>
           </Card>

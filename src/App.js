@@ -81,7 +81,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/index-codeQuizs' render={() => (
             <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/take-codeQuiz/:codeQuizId' render={() => (
+          <Route path='/take-codeQuiz/:codeQuizId' render={() => (
             <TakeCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
           <Route path='/show-codeQuiz/:codeQuizId' render={() => (

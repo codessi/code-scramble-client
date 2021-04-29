@@ -36,7 +36,7 @@ class CreateCodeQuiz extends Component {
         message: messages.createCodeQuizSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/show-codeQuiz/' + this.state.id))
+      .then(() => history.push('/take-codeQuiz/' + this.state.id))
       .catch(error => {
         this.setState({ title: '', text: '' })
         msgAlert({
