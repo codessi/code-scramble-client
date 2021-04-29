@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
+import SignInAsGuest from './SignInAsGuest'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -47,6 +48,7 @@ class SignIn extends Component {
   render () {
     const { email, password } = this.state
 
+    const { msgAlert, setUser } = this.props
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
@@ -81,6 +83,7 @@ class SignIn extends Component {
               Submit
             </Button>
           </Form>
+          <SignInAsGuest msgAlert={msgAlert} setUser={setUser} />
         </div>
       </div>
     )

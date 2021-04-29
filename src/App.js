@@ -60,10 +60,13 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Fragment>
-              <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
-              <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
-            </Fragment>
+            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+          )} />
+          <Route path ='/create-quiz' render={() => (
+            <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route path ='/index-quiz' render={() => (
+            <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />

@@ -17,13 +17,13 @@ export const createCodeQuiz = (form, user) => {
   })
 }
 
-export const indexCodeQuizs = () => {
+export const indexCodeQuizs = (user) => {
   return axios({
     url: apiUrl + '/codeQuizs',
-    method: 'GET'
-    // headers: {
-    //   'Authorization': `Token token=${user.token}`
-    // }
+    method: 'GET',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
   })
 }
 
