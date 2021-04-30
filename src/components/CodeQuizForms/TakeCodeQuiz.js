@@ -12,6 +12,11 @@ import '../../index.scss'
 
 const TakeCodeQuiz = (props) => {
   const [codeQuiz, setCodeQuiz] = useState(null)
+  // state is empty and when show request will response with data
+  // and one of property is text we anc take res.data.codeQuiz.text and shuffle it.
+  // then add to state?  ...  then  the solution will be messed up.
+  //
+  // how....
   const { user, msgAlert, match } = props
   console.log(props)
   useEffect(() => {
@@ -29,6 +34,9 @@ const TakeCodeQuiz = (props) => {
   }, [])
 
   const Solution = () => {
+    // it's function that will destructure first and second index
+    // using state very weird. it just turn on and off. so it can hold array,
+    // object, boolean or anything.
     const [showResults, setShowResults] = React.useState(false)
     const onClick = () => setShowResults(true)
     return (
@@ -68,10 +76,10 @@ const TakeCodeQuiz = (props) => {
               <Col sm={6}>
                 <Card.Body>
                   <Card.Title>Title: {codeQuiz.title}</Card.Title>
-                  <Card.Text className= "p_wrap" rows={10}contentEditable="true">
+                  <Card.Text className= "p_wrap" rows={10}>
                     {shuffle(codeQuiz.text)}
                   </Card.Text>
-                  <h5>Answer</h5>
+                  <h5>Your Answer</h5>
                   <Card.Text className= "p_wrap" rows={10}contentEditable="true">
                   </Card.Text>
                 </Card.Body>
