@@ -63,7 +63,7 @@ const TakeCodeQuiz = (props) => {
       a[i] = a[j]
       a[j] = tmp
     }
-    return a
+    return a.join('\n')
   }
 
   return (
@@ -77,7 +77,7 @@ const TakeCodeQuiz = (props) => {
                 <Card.Body>
                   <Card.Title>Title: {codeQuiz.title}</Card.Title>
                   <Card.Text className= "p_wrap" rows={10}>
-                    {shuffle(codeQuiz.text).map((el, index) => (<p key= {index}>{el}</p>))}
+                    {shuffle(codeQuiz.text)}
                   </Card.Text>
                   <h5>Your Answer</h5>
                   <Card.Text className= "p_wrap" rows={10}contentEditable="true">

@@ -1,0 +1,11 @@
+note:
+app.js
+  has state as user 
+that user need to have information
+app.js has setUser function that set the state when you pass the user object in user is an object. you need to curly braces because other wise state = user 
+user == m.... is not object?  how about message alerts? .... 
+just remember setState({ forNOw. })
+
+anyway it sill st state the user information will be receive from  prop signin. 
+
+sigin will receive from user form submit whne submit it will update state how? as it type it will update automaticlly by using onchang event.target.name event.targe. value. 

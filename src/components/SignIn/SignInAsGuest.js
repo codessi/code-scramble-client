@@ -19,9 +19,11 @@ class SignIn extends Component {
 
   onSignIn = event => {
     event.preventDefault()
-
+    // when you click submit
     const { msgAlert, history, setUser } = this.props
-
+    // get it from prop and set it to state???  noo
+    // the other way.  get it from state and send it to prop.
+    // ok signin api passing state and get response then set state of paprents. -> signIn
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
@@ -41,6 +43,7 @@ class SignIn extends Component {
   }
 
   render () {
+    //
     return (
       <Form onSubmit={this.onSignIn}>
         <Button
