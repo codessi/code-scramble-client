@@ -34,9 +34,6 @@ const TakeCodeQuiz = (props) => {
   }, [])
 
   const Solution = () => {
-    // it's function that will destructure first and second index
-    // using state very weird. it just turn on and off. so it can hold array,
-    // object, boolean or anything.
     const [showResults, setShowResults] = React.useState(false)
     const onClick = () => setShowResults(true)
     return (
@@ -76,9 +73,7 @@ const TakeCodeQuiz = (props) => {
               <Col sm={9}>
                 <Card.Body>
                   <Card.Title>Title: {codeQuiz.title}</Card.Title>
-                  <Card.Text className= "p_wrap" rows={10}>
-                    {shuffle(codeQuiz.text).map((el, index) => (<p key= {index}>{el}</p>))}
-                  </Card.Text>
+                  {shuffle(codeQuiz.text).map((el, index) => (<Card.Text component = 'span' className= "p_wrap codeLine" rows={10} key= {index} >{el}</Card.Text>))}
                   <h5>Your Answer</h5>
                   <Card.Text className= "p_wrap" rows={10}contentEditable="true">
                   </Card.Text>
