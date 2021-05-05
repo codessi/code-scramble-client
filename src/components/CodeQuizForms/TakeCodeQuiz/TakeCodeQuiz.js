@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 // import { showCodeQuiz, deleteCodeQuiz } from '../../api/codeQuiz'
-import { showCodeQuiz } from '../../api/codeQuiz'
+import { showCodeQuiz } from './../../../api/codeQuiz'
 import Container from 'react-bootstrap/Container'
 // import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import '../../index.scss'
+import Board from './Board'
+import CardT from './CardT'
+
+import '../../../index.scss'
 
 const TakeCodeQuiz = (props) => {
   const [codeQuiz, setCodeQuiz] = useState(null)
-  // state is empty and when show request will response with data
-  // and one of property is text we anc take res.data.codeQuiz.text and shuffle it.
-  // then add to state?  ...  then  the solution will be messed up.
-  //
-  // how....
+
   const { user, msgAlert, match } = props
   console.log(props)
   useEffect(() => {
@@ -71,13 +70,13 @@ const TakeCodeQuiz = (props) => {
           <Card key={codeQuiz._id} className="Card">
             <Row>
               <Col sm={9}>
-                <Card.Body>
+                <Board id='board-1'>
                   <Card.Title>Title: {codeQuiz.title}</Card.Title>
-                  {shuffle(codeQuiz.text).map((el, index) => (<Card.Text component = 'span' className= "p_wrap codeLine" rows={10} key= {index} >{el}</Card.Text>))}
+                  {shuffle(codeQuiz.text).map((el, index) => (<CardT component = 'span' className= "p_wrap codeLine" draggable= 'true' rows={10} key= {index} ><p>{el}</p></CardT>))}
                   <h5>Your Answer</h5>
                   <Card.Text className= "p_wrap" rows={10}contentEditable="true">
                   </Card.Text>
-                </Card.Body>
+                </Board>
                 <br/>
                 <Solution />
               </Col>

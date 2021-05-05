@@ -13,7 +13,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import CreateCodeQuiz from './components/CodeQuizForms/CreateCodeQuiz'
 import IndexCodeQuizs from './components/CodeQuizForms/IndexCodeQuizs'
 import ShowCodeQuiz from './components/CodeQuizForms/ShowCodeQuiz'
-import TakeCodeQuiz from './components/CodeQuizForms/TakeCodeQuiz'
+import TakeCodeQuiz from './components/CodeQuizForms/TakeCodeQuiz/TakeCodeQuiz'
 import UpdateCodeQuiz from './components/CodeQuizForms/UpdateCodeQuiz'
 
 class App extends Component {
