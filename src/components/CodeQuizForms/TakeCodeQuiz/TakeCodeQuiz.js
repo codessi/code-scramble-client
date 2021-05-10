@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 // import { showCodeQuiz, deleteCodeQuiz } from '../../api/codeQuiz'
 import { showCodeQuiz } from './../../../api/codeQuiz'
-import Container from 'react-bootstrap/Container'
+// import Container from 'react-bootstrap/Container'
 // import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
@@ -61,29 +61,23 @@ const TakeCodeQuiz = (props) => {
     }
     return a
   }
-
+  // setState??  istead of just a?   when wn suffle and passing codequiz is the state and pass the tex and shuffle it and set state again then .. mmm i feel like there is way to create another compoenent..    ok let's practice with simpler project ... like sortable.  this maybe too big of project? ... mmm  .... well what if map the result of shuffle then thurn them in to
   return (
     <div>
       {codeQuiz ? (
-        <Container>
-          {/* <p className= "p_wrap">{codeQuiz.text}</p> */}
-          <Card key={codeQuiz._id} className="Card">
-            <Row>
-              <Col sm={9}>
-                <Board id='board-1'>
-                  <Card.Title>Title: {codeQuiz.title}</Card.Title>
-                  {shuffle(codeQuiz.text).map((el, index) => (<CardT component = 'span' className= "p_wrap codeLine" draggable= 'true' rows={10} key= {index} ><p>{el}</p></CardT>))}
-                  <h5>Your Answer</h5>
-                  <Card.Text className= "p_wrap" rows={10}contentEditable="true">
-                  </Card.Text>
-                </Board>
-                <br/>
-                <Solution />
-              </Col>
-            </Row>
-          </Card>
-        </Container>
-
+        <Board row={12} id='board-1'>
+          <Row>
+            <Col sm={9}>
+              <Card.Title>Title: {codeQuiz.title}</Card.Title>
+              {shuffle(codeQuiz.text).map((el, index) => (<CardT component = 'span' className= "p_wrap codeLine" draggable= 'true' rows={6} key= {index} ><p>{el}</p></CardT>))}
+              <h5>Your Answer</h5>
+              <Card.Text className= "p_wrap" rows={3}contentEditable="true">
+              </Card.Text>
+              <br/>
+              <Solution />
+            </Col>
+          </Row>
+        </Board>
       ) : 'Loading...'}
     </div>
   )

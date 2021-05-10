@@ -23,6 +23,7 @@ function Board (props) {
   return (
     <Card.Body
       id={props.id}
+      rows = {12}
       className = {props.className}
       onDrop={drop}
       onDragOver={dragOver}
