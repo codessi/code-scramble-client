@@ -11,7 +11,11 @@ import Col from 'react-bootstrap/Col'
 import Board from './Board'
 import CardT from './CardT'
 
-import '../../../index.scss'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DragDropContext } from 'react-dnd'
+// import { DndContext } from 'react-dnd'
+// import '../../index.scss'
+const update = require('immutability-helper')
 
 const TakeCodeQuiz = (props) => {
   const [codeQuiz, setCodeQuiz] = useState(null)
@@ -43,6 +47,19 @@ const TakeCodeQuiz = (props) => {
     )
   }
 
+  const moveCard = (dragIndex, hoverIndex) => {
+    const { cards } = this.state
+    const dragCard = cards[dragIndex]
+    this.setState(
+      update(this.state, {
+        cards: {
+          // what is $splice
+          $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
+        }
+      })
+    )
+  }
+
   const Results = () => (
     <div id="results" className=" p_wrap search-results">
       {codeQuiz.text}
@@ -69,7 +86,14 @@ const TakeCodeQuiz = (props) => {
           <Row>
             <Col sm={9}>
               <Card.Title>Title: {codeQuiz.title}</Card.Title>
-              {shuffle(codeQuiz.text).map((el, index) => (<CardT component = 'span' className= "p_wrap codeLine" draggable= 'true' rows={6} key= {index} ><p>{el}</p></CardT>))}
+              {shuffle(codeQuiz.text).map((card, index) =>
+                (<CardT
+                  key={card.id}
+                  index={index}
+                  id={card.id}
+                  text={card.text}
+                  moveCard={moveCard}
+                />))}
               <h5>Your Answer</h5>
               <Card.Text className= "p_wrap" rows={3}contentEditable="true">
               </Card.Text>
@@ -83,4 +107,6 @@ const TakeCodeQuiz = (props) => {
   )
 }
 
-export default withRouter(TakeCodeQuiz)
+// export default withRouter(TakeCodeQuiz)
+// export default DragDropContext(HTML5Backend)(TakeCodeQuiz)
+export default withRouter(DragDropContext(HTML5Backend)(TakeCodeQuiz))
