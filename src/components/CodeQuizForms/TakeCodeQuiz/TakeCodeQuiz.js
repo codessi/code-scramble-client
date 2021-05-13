@@ -79,6 +79,7 @@ const TakeCodeQuiz = (props) => {
     return a
   }
   // setState??  istead of just a?   when wn suffle and passing codequiz is the state and pass the tex and shuffle it and set state again then .. mmm i feel like there is way to create another compoenent..    ok let's practice with simpler project ... like sortable.  this maybe too big of project? ... mmm  .... well what if map the result of shuffle then thurn them in to
+  // haha 
   return (
     <div>
       {codeQuiz ? (
