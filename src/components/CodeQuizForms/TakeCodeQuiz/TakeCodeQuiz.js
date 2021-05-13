@@ -88,10 +88,10 @@ const TakeCodeQuiz = (props) => {
               <Card.Title>Title: {codeQuiz.title}</Card.Title>
               {shuffle(codeQuiz.text).map((card, index) =>
                 (<CardT
-                  key={card.id}
+                  key={card}
                   index={index}
-                  id={card.id}
-                  text={card.text}
+                  id={card}
+                  text={card}
                   moveCard={moveCard}
                 />))}
               <h5>Your Answer</h5>
