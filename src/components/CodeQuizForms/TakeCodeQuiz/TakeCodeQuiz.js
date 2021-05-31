@@ -10,6 +10,7 @@ import Col from 'react-bootstrap/Col'
 
 import Board from './Board'
 import CardT from './CardT'
+import Component1 from './Component1'
 
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd'
@@ -19,13 +20,14 @@ const update = require('immutability-helper')
 
 const TakeCodeQuiz = (props) => {
   const [codeQuiz, setCodeQuiz] = useState(null)
-
+  // this is state
   const { user, msgAlert, match } = props
   console.log(props)
   useEffect(() => {
     showCodeQuiz(user, match.params.codeQuizId)
       .then(res => {
         setCodeQuiz(res.data.codeQuiz)
+        console.log('console is ' + JSON.stringify(res.data.codeQuiz))
       })
       .catch(err => {
         msgAlert({
@@ -78,8 +80,7 @@ const TakeCodeQuiz = (props) => {
     }
     return a
   }
-  // setState??  istead of just a?   when wn suffle and passing codequiz is the state and pass the tex and shuffle it and set state again then .. mmm i feel like there is way to create another compoenent..    ok let's practice with simpler project ... like sortable.  this maybe too big of project? ... mmm  .... well what if map the result of shuffle then thurn them in to
-  // haha 
+
   return (
     <div>
       {codeQuiz ? (
@@ -95,6 +96,7 @@ const TakeCodeQuiz = (props) => {
                   text={card}
                   moveCard={moveCard}
                 />))}
+              <Component1 text = {codeQuiz.text} />
               <h5>Your Answer</h5>
               <Card.Text className= "p_wrap" rows={3}contentEditable="true">
               </Card.Text>
