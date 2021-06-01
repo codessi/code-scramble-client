@@ -27,11 +27,9 @@ const cardSource = {
 }
 
 const cardTarget = {
-  // is not function it's object.  that has one funtion called hover that takes prop monior compeond nand it will return nothing if dr.. hove.. is same
+
   hover (props, monitor, component) {
     console.log(monitor)
-    // console.log("props is " + JSON.stringify(props))
-
     const dragIndex = monitor.getItem().index
 
     const hoverIndex = props.index
@@ -39,17 +37,13 @@ const cardTarget = {
     if (dragIndex === hoverIndex) {
       return
     }
-    //
-    // Determine rectangle on screen
+
     // eslint-disable-next-line react/no-find-dom-node
-    const hoverBoundingRect = (findDOMNode(
-      component
+    const hoverBoundingRect = (findDOMNode(component
     )).getBoundingClientRect()
 
-    // Get vertical middle
     const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
 
-    // Determine mouse position
     const clientOffset = monitor.getClientOffset()
 
     // Get pixels to the top
@@ -119,7 +113,6 @@ export default flow(
     })
   ),
   DropTarget('card', cardTarget, (connect) => ({
-    // we put cardTarget here ok....
     connectDropTarget: connect.dropTarget()
   }))
 )(CardT)
