@@ -5,7 +5,7 @@ import CardT from './CardT'
 const update = require('immutability-helper')
 
 function Component1 (props) {
-  const [text, setText] = useState(null)
+  const [text, setText] = useState({ cards: null })
 
   const moveCard = (dragIndex, hoverIndex) => {
     const { cards } = this.state
@@ -27,7 +27,7 @@ function Component1 (props) {
       cards.push(JSON.stringify(card))
     }
     // const newObj = Object.assign({ line: null }, [textArray])
-    setText(cards)
+    setText({ cards: cards })
     // {}
     console.log('cards is ' + cards)
     console.log('text is ' + text)
@@ -36,8 +36,8 @@ function Component1 (props) {
   return (
     <div>
       hello
-      {console.log('text now is' + typeof text)}
-      {text && text.map((card, index) =>
+      {console.log('text now is' + JSON.stringify(text))}
+      {text.cards && text.cards.map((card, index) =>
         (<CardT
           key={card.id}
           index={index}
