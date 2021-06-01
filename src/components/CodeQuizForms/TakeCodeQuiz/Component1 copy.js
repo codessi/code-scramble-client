@@ -8,10 +8,10 @@ function Component1 (props) {
   const [text, setText] = useState({ cards: null })
 
   const moveCard = (dragIndex, hoverIndex) => {
-    const { cards } = text
+    const { cards } = this.state
     const dragCard = cards[dragIndex]
-    setText(
-      update(text, {
+    this.setState(
+      update(this.state, {
         cards: {
           $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
         }
@@ -21,6 +21,7 @@ function Component1 (props) {
 
   useEffect(() => {
     const textArray = props.text.split('\n')
+    console.log('text array is ' + typeof textArray)
     const cards = []
     for (let i = 1; i < textArray.length; i++) {
       const card = { id: i, text: textArray[i] }
@@ -29,7 +30,7 @@ function Component1 (props) {
     // const newObj = Object.assign({ line: null }, [textArray])
     setText({ cards: cards })
     // {}
-    console.log('cards is ' + cards)
+    console.log('cards is ' + JSON.stringify(cards))
     console.log('text is ' + text)
   }, [])
 
