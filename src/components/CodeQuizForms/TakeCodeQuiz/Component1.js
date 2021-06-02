@@ -42,7 +42,7 @@ function Component1 (props) {
           key={card.id}
           index={index}
           id={card.id}
-          text={card}
+          text={card.text}
           moveCard={moveCard}
         />))}
       {/* {props.text} */}
