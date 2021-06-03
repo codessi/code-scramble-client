@@ -66,9 +66,6 @@ class App extends Component {
           <Route path ='/create-codeQuiz' render={() => (
             <CreateCodeQuiz msgAlert={this.msgAlert} user={user} />
           )} />
-          <Route path ='/index-codeQuizs' render={() => (
-            <IndexCodeQuizs msgAlert={this.msgAlert} user={user} />
-          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

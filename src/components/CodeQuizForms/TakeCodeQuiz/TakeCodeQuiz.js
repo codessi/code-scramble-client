@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import Board from './Board'
+// import Board from './Board'
 // import CardT from './CardT'
 import Component1 from './Component1'
 
@@ -78,7 +78,8 @@ const TakeCodeQuiz = (props) => {
   return (
     <div>
       {codeQuiz ? (
-        <Board row={12} id='board-1'>
+        // <Board row={12} id='board-1'>
+        <div>
           <Row>
             <Col sm={9}>
               <Card.Title>Title: {codeQuiz.title}</Card.Title>
@@ -98,7 +99,8 @@ const TakeCodeQuiz = (props) => {
               <Solution />
             </Col>
           </Row>
-        </Board>
+          {/* </Board> */}
+        </div>
       ) : 'Loading...'}
     </div>
   )

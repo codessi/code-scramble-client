@@ -18,9 +18,21 @@ function Component1 (props) {
       })
     )
   }
+  const shuffle = function (x) {
+    const a = x.split('\n')
+    const n = a.length
+
+    for (let i = n - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const tmp = a[i]
+      a[i] = a[j]
+      a[j] = tmp
+    }
+    return a
+  }
 
   useEffect(() => {
-    const textArray = props.text.split('\n')
+    const textArray = shuffle(props.text)
     const cards = []
     for (let i = 1; i < textArray.length; i++) {
       const card = { id: i, text: textArray[i] }
@@ -35,14 +47,13 @@ function Component1 (props) {
 
   return (
     <div>
-      hello
       {console.log('text now is' + JSON.stringify(text))}
       {text.cards && text.cards.map((card, index) =>
         (<CardT
           key={card.id}
           index={index}
           id={card.id}
-          text={card}
+          text={card.text}
           moveCard={moveCard}
         />))}
       {/* {props.text} */}
