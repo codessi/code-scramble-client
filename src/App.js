@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
+// react-dnd-html5-backend react-dnd immutability-helper lodash/flow
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
@@ -13,7 +14,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import CreateCodeQuiz from './components/CodeQuizForms/CreateCodeQuiz'
 import IndexCodeQuizs from './components/CodeQuizForms/IndexCodeQuizs'
 import ShowCodeQuiz from './components/CodeQuizForms/ShowCodeQuiz'
-import TakeCodeQuiz from './components/CodeQuizForms/TakeCodeQuiz'
+import TakeCodeQuiz from './components/CodeQuizForms/TakeCodeQuiz/TakeCodeQuiz'
 import UpdateCodeQuiz from './components/CodeQuizForms/UpdateCodeQuiz'
 
 class App extends Component {
