@@ -48,16 +48,14 @@ const TakeCodeQuiz = (props) => {
   return (
     <div>
       {codeQuiz ? (
-        <Board row={12} id='board-1'>
-          <Row>
-            <Col sm={9}>
-              <Card.Title>Title: {codeQuiz.title}</Card.Title>
-              < Component1 text = {codeQuiz.text} />
-              <br/>
-              <Solution />
-            </Col>
-          </Row>
-        </Board>      
+        <Row>
+          <Col md={9}>
+            <Card.Title>Title: {codeQuiz.title}</Card.Title>
+            < Component1 text = {codeQuiz.text} />
+            <br/>
+            <Solution />
+          </Col>
+        </Row>
       ) : 'Loading...'}
     </div>
   )
