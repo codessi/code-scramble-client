@@ -38,11 +38,7 @@ function Component1 (props) {
       const card = { id: i, text: textArray[i] }
       cards.push(card)
     }
-    // const newObj = Object.assign({ line: null }, [textArray])
     setText({ cards: cards })
-    // {}
-    console.log('cards is ' + cards)
-    console.log('text is ' + text)
   }, [])
 
   return (
@@ -56,11 +52,8 @@ function Component1 (props) {
           text={card.text}
           moveCard={moveCard}
         />))}
-      {/* {props.text} */}
     </div>
   )
 }
 
 export default DragDropContext(HTML5Backend)(Component1)
-
-// export default Component1

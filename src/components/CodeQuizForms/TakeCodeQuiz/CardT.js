@@ -1,4 +1,4 @@
-// copy whole thing and insert inside of render.
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { findDOMNode } from 'react-dom'
@@ -6,7 +6,7 @@ import {
   DragSource,
   DropTarget
 } from 'react-dnd'
-// import { XYCoord } from 'dnd-core'
+
 import flow from 'lodash/flow'
 
 const style = {
