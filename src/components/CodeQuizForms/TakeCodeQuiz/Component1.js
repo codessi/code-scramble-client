@@ -33,8 +33,10 @@ function Component1 (props) {
 
   useEffect(() => {
     const textArray = shuffle(props.text)
+    // const textArray = props.text
+    console.log('props.text is ' + props.text)
     const cards = []
-    for (let i = 1; i < textArray.length; i++) {
+    for (let i = 0; i < textArray.length; i++) {
       const card = { id: i, text: textArray[i] }
       cards.push(card)
     }
