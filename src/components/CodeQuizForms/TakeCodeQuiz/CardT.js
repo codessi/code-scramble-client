@@ -6,6 +6,7 @@ import {
   DragSource,
   DropTarget
 } from 'react-dnd'
+import './../CodeQuizForms.scss'
 
 import flow from 'lodash/flow'
 
@@ -97,7 +98,7 @@ class CardT extends React.Component {
       connectDragSource &&
       connectDropTarget &&
       connectDragSource(
-        connectDropTarget(<div style={{ ...style, opacity }}>{text}</div>)
+        connectDropTarget(<div className= "p_wrap" style={{ ...style, opacity }}>{text}</div>)
       )
     )
   }

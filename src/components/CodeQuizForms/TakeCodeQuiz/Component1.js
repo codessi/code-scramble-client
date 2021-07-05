@@ -28,6 +28,7 @@ function Component1 (props) {
       a[i] = a[j]
       a[j] = tmp
     }
+    console.log(a)
     return a
   }
 
